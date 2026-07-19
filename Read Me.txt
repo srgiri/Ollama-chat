@@ -1,0 +1,7 @@
+>> ollama serve
+
+>> Go to path My Work/Ollama-Chat
+>> python3 -m http.server 8080
+
+
+Browser --> http://localhost:8080

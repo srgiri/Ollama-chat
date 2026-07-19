@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Ollama Chat</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.js"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.js';
+</script>
+
+    <!-- Markdown Renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div class="title">
+            🤖 Local Ollama Chat
+        </div>
+
+        <button id="themeBtn" class="theme-btn">
+            ☀️ Light
+        </button>
+
+    </div>
+
+    <!-- Chat Window -->
+
+    <div id="chat" class="chat">
+
+        <div class="welcome">
+
+            <h2>Welcome 👋</h2>
+
+            <p>
+                Ask any question or optionally upload a document/image for analysis.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Panel -->
+
+<!-- ===========================
+     Prompt Card
+============================ -->
+
+<div class="prompt-card">
+
+    <textarea
+        id="prompt"
+        placeholder="Ask anything..."
+        rows="5"></textarea>
+
+    <div class="prompt-toolbar">
+
+        <div class="toolbar-left">
+
+            <input
+                id="fileInput"
+                type="file"
+                accept=".pdf,.txt,.md,.json,.xml,.yaml,.yml,.java,.sql,.js,.html,.css,.png,.jpg,.jpeg"
+                hidden>
+
+            <button
+                id="uploadBtn"
+                class="toolbar-btn">
+
+                📎 Upload File
+
+            </button>
+
+            <span id="fileName">
+
+                No file selected
+
+            </span>
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <button
+                id="clearBtn"
+                class="toolbar-btn">
+
+                🗑 Clear
+
+            </button>
+
+            <button
+                id="sendBtn">
+
+                ➤ Send
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="pdf.min.js"></script>
+
+<script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "pdf.worker.min.js";
+</script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
